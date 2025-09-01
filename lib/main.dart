@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:getx_tut/home_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -11,10 +11,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
+      // theme: ThemeData.light(),
+      // darkTheme: ThemeData.dark(),
+      themeMode: ThemeMode.light,
       home: HomeScreen(),
     );
   }

@@ -12,14 +12,21 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(children: [
-          
+      appBar: AppBar(
+        title: Text("Flutter Mate"),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Get.isDarkMode
+                  ? Get.changeTheme(ThemeData.light())
+                  : Get.changeTheme(ThemeData.dark());
+            },
+            icon: Icon(Icons.lightbulb),
+          ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Get.snackbar("Flutter Mate", "Subscribe to my Channel");
-        },
+      body: Center(
+        child: Text(Get.isDarkMode ? 'App in Dark Mode' : "App in Light Mode"),
       ),
     );
   }
